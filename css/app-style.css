@@ -1,0 +1,45 @@
+#resultado{
+    display: none;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    background-color: rgb(0, 0, 77);
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputs{
+    display: flex;
+    
+    gap: 100px;
+}
+
+input{
+    height: 50px;
+    border-radius: 10px;
+}
+label{
+    font-size: 30px;
+}
+button{
+    height: 50px;
+    width: 100px;
+}
+
+.buttons{
+    display: flex;
+    gap: 100px;
+}
