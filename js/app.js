@@ -32,7 +32,7 @@ function desconto(){
         display.style.display = 'flex'
         display.innerHTML=
         `
-            <p>O valor total com desconto é: ${resultado}</p>
+            <p>O valor total com desconto (${desconto}%) é: ${resultado}</p>
         `;  
 
     };
@@ -52,7 +52,7 @@ function juros(){
         display.style.display = 'flex'
         display.innerHTML=
         `
-            <p>O valor total com juros é: ${resultado}</p>
+            <p>O valor total com juros (${acrescimo}%) é: ${resultado}</p>
         `;  
 
     };
@@ -97,6 +97,7 @@ function lucro() {
 }
 function limpar() {
     document.getElementById('resultado').style.display='none';
-    document.getElementById('valor01').value= '';
+    input01=document.getElementById('valor01').value= '';
     document.getElementById('valor02').value= '';
+    input01.focus();
 }
