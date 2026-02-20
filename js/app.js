@@ -1,41 +1,29 @@
-function calcularTotal(){
-    const v1 = parseFloat(document.getElementById('valor01').value);
-    const v2 = parseFloat(document.getElementById('valor02').value);
-    let resultado = v1 * v2
-    let display = document.getElementById('resultado');
-    console.log(resultado);
-    if (isNaN(v1) || isNaN(v2)){
+const input01 = document.getElementById('valor01');
+const input02 = document.getElementById('valor02');
 
+function calcularTotal(){
+    const v1 = parseFloat(input01.value);
+    const v2 = parseFloat(input02.value);
+    let display = document.getElementById('resultado');
+    if (isNaN(v1) || isNaN(v2)){
+        
         alert('Valor 01 ou Valor 02 em branco, digite um número')
         display.style.display = 'none'
     } else{
+        let resultado = v1 * v2
         display.style.display = 'flex'
         display.innerHTML=
         `
-            <p>O valor total é: ${resultado}</p>
+        <p>O valor total é: ${resultado}</p>
         `;  
-
+        
     };
 
 };
 function desconto(){
-    const v1 = parseFloat(document.getElementById('valor01').value);
-    const v2 = parseFloat(document.getElementById('valor02').value);
+
     let desconto = (v1 * v2) / 100
     let resultado = v1 - desconto
-    let display = document.getElementById('resultado');
-    if (isNaN(v1) || isNaN(v2)){
-
-        alert('Valor 01 ou Valor 02 em branco, digite um número')
-        display.style.display = 'none'
-    } else{
-        display.style.display = 'flex'
-        display.innerHTML=
-        `
-            <p>O valor total com desconto (${desconto}%) é: ${resultado}</p>
-        `;  
-
-    };
 }
 function juros(){
     const v1 = parseFloat(document.getElementById('valor01').value);
