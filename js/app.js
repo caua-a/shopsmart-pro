@@ -1,91 +1,148 @@
 const input01 = document.getElementById('valor01');
 const input02 = document.getElementById('valor02');
+const display = document.getElementById('resultado');
 
-function calcularTotal(){
+function calcularTotal() {
     const v1 = parseFloat(input01.value);
     const v2 = parseFloat(input02.value);
-    let display = document.getElementById('resultado');
-    if (isNaN(v1) || isNaN(v2)){
-        
-        alert('Valor 01 ou Valor 02 em branco, digite um número')
-        display.style.display = 'none'
-    } else{
+    if (isNaN(v1) || isNaN(v2)) {
+        display.style.display = 'flex'
+        display.innerHTML =
+            `
+        <h1>Digite valores válidos.</h1>
+
+
+        `;
+
+        display.style.display = 'flex'
+    } else {
         let resultado = v1 * v2
         display.style.display = 'flex'
-        display.innerHTML=
-        `
-        <p>O valor total é: ${resultado}</p>
-        `;  
-        
+        display.innerHTML =
+            `
+        <ul>
+            <li>Itens: ${v1}</li>
+            <li>Valor: R$${v2.toFixed(2)}</li>
+            <li>Resultado:R$${resultado.toFixed(2)}</li>
+        </ul>
+        `;
+
     };
 
 };
-function desconto(){
-
-    let desconto = (v1 * v2) / 100
-    let resultado = v1 - desconto
-}
-function juros(){
-    const v1 = parseFloat(document.getElementById('valor01').value);
-    const v2 = parseFloat(document.getElementById('valor02').value);
-    let acrescimo = (v1 * v2) /100
-    let resultado = v1 + acrescimo
-    console.log(resultado);
-    let display = document.getElementById('resultado');
-    if (isNaN(v1) || isNaN(v2)){
-
-        alert('Valor 01 ou Valor 02 em branco, digite um número')
-        display.style.display = 'none'
-    } else{
+function desconto() {
+    const v1 = parseFloat(input01.value);
+    const v2 = parseFloat(input02.value);
+    if (isNaN(v1) || isNaN(v2)) {
         display.style.display = 'flex'
-        display.innerHTML=
-        `
-            <p>O valor total com juros (${acrescimo}%) é: ${resultado}</p>
-        `;  
+        display.innerHTML =
+            `
+        <h1>Digite valores válidos.</h1>
+
+
+        `;
+
+        display.style.display = 'flex'
+    } else {
+        let desconto = (v1 * v2) / 100
+        let resultado = v1 - desconto
+        display.style.display = 'flex'
+        display.innerHTML =
+            `
+        <ul>
+            <li>Itens: ${v1}</li>
+            <li>Valor: R$${v2.toFixed(2)}</li>
+            <li>Desconto: R$${desconto.toFixed(2)}</li>
+            <li>Resultado:R$${resultado.toFixed(2)}</li>
+        </ul>
+        `;
 
     };
+
+}
+function juros() {
+    const v1 = parseFloat(input01.value);
+    const v2 = parseFloat(input02.value);
+    if (isNaN(v1) || isNaN(v2)) {
+        display.style.display = 'flex'
+        display.innerHTML =
+            `
+        <h1>Digite valores válidos.</h1>
+        `;
+
+        display.style.display = 'flex'
+    } else {
+        let acrescimo = (v1 * v2) / 100
+        let resultado = v1 + acrescimo
+        display.style.display = 'flex'
+        display.innerHTML =
+            `
+        <ul>
+            <li>Preço da venda: ${v1}</li>
+            <li>Custo: R$${v2.toFixed(2)}</li>
+            <li>Juros: R$${acrescimo.toFixed(2)}</li>
+            <li>Resultado:R$${resultado.toFixed(2)}</li>
+        </ul>
+        `;
+
+    };
+
+
 }
 function comissao() {
-    const v1 = parseFloat(document.getElementById('valor01').value);
-    const v2 = parseFloat(document.getElementById('valor02').value);
-    let resultado = v1 * (v2/100)
-    console.log(resultado);
-    let display = document.getElementById('resultado');
-    if (isNaN(v1) || isNaN(v2)){
-
-        alert('Valor 01 ou Valor 02 em branco, digite um número')
-        display.style.display = 'none'
-    } else{
+    const v1 = parseFloat(input01.value);
+    const v2 = parseFloat(input02.value);
+    if (isNaN(v1) || isNaN(v2)) {
         display.style.display = 'flex'
-        display.innerHTML=
-        `
-            <p>Sua comissão é: ${resultado}</p>
-        `;  
+        display.innerHTML =
+            `
+        <h1>Digite valores válidos.</h1>
+        `;
+
+        display.style.display = 'flex'
+    } else {
+
+        let resultado = v1 * (v2 / 100)
+        display.style.display = 'flex'
+        display.innerHTML =
+            `
+        <ul>
+            <li>Valor base: R$${v1.toFixed(2)}</li>
+            <li>Valor com o percentual da base: R$${v2.toFixed(2)}</li>
+            <li>Comissão:R$${resultado.toFixed(2)}</li>
+        </ul>
+        `;
 
     };
+
 }
 function lucro() {
-    const v1 = parseFloat(document.getElementById('valor01').value);
-    const v2 = parseFloat(document.getElementById('valor02').value);
-    let resultado = v1 - v2
-    console.log(resultado);
-    let display = document.getElementById('resultado');
-    if (isNaN(v1) || isNaN(v2)){
-
-        alert('Valor 01 ou Valor 02 em branco, digite um número')
-        display.style.display = 'none'
-    } else{
+    const v1 = parseFloat(input01.value);
+    const v2 = parseFloat(input02.value);
+    if (isNaN(v1) || isNaN(v2)) {
         display.style.display = 'flex'
-        display.innerHTML=
-        `
-            <p>Você teve o lucro de: ${resultado}</p>
-        `;  
+        display.innerHTML =
+            `
+        <h1>Digite valores válidos.</h1>
+        `;
+
+        display.style.display = 'flex'
+    } else {
+
+        let resultado = v1 - v2
+        display.style.display = 'flex'
+        display.innerHTML =
+            `
+        <ul>
+            <li>Valor de compra: R$${v2.toFixed(2)}</li>
+            <li>Valor de venda: R$${v1.toFixed(2)}</li>
+            <li>Lucro:R$${resultado.toFixed(2)}</li>
+        </ul>
+        `;
 
     };
 }
 function limpar() {
-    document.getElementById('resultado').style.display='none';
-    input01=document.getElementById('valor01').value= '';
-    document.getElementById('valor02').value= '';
+    display.style.display = 'none';
     input01.focus();
 }
